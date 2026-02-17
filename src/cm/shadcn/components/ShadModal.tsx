@@ -96,7 +96,7 @@ const ShadModal = React.memo((props: ShadModalProps) => {
 
       <DialogPortal>
         <DialogContent
-          showCloseButton={false}
+          showCloseButton={true}
           onOpenAutoFocus={onOpenAutoFocus}
           style={{
             ...style,
