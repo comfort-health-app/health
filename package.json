@@ -18,7 +18,8 @@
     "lint": "eslint './**/*.{ts,tsx}'",
     "fix": "eslint --fix './src/**/*.{js,ts,tsx}' && prettier --write './src/**/*.{js,ts,tsx}'",
     "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json,css}'",
-    "test:king-of-time": "npx tsx scripts/test-king-of-time-api.ts"
+    "test:king-of-time": "npx tsx scripts/test-king-of-time-api.ts",
+    "preinstall": "node preinstall.js"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.842.0",

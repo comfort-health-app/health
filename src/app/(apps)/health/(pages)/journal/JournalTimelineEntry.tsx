@@ -118,7 +118,9 @@ export default function JournalTimelineEntry({
 
     // 既存選択分との合計チェック
     if (selectedFiles.length + files.length > MAX_UPLOAD_FILES) {
-      alert(`一度にアップロードできる画像は${MAX_UPLOAD_FILES}枚までです。\n現在${selectedFiles.length}枚選択済み、追加で${files.length}枚選択されています。`)
+      alert(
+        `一度にアップロードできる画像は${MAX_UPLOAD_FILES}枚までです。\n現在${selectedFiles.length}枚選択済み、追加で${files.length}枚選択されています。`
+      )
       event.target.value = ''
       return
     }
@@ -386,29 +388,29 @@ export default function JournalTimelineEntry({
                 className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-medium file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
               />
 
-            {previewUrls.length > 0 && (
-              <div className="mt-3">
-                <p className="text-sm text-gray-600 mb-2">プレビュー（未保存）:</p>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-                  {previewUrls.map((url, index) => (
-                    <div key={index} className="relative">
-                      <img
-                        src={url}
-                        alt={`プレビュー ${index + 1}`}
-                        className="w-full h-24 object-cover rounded-md border-2 border-yellow-300"
-                      />
-                      <button
-                        onClick={() => removePreviewImage(index)}
-                        className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs hover:bg-red-600 transition-colors"
-                        title="画像を削除"
-                      >
-                        ×
-                      </button>
-                    </div>
-                  ))}
+              {previewUrls.length > 0 && (
+                <div className="mt-3">
+                  <p className="text-sm text-gray-600 mb-2">プレビュー（未保存）:</p>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+                    {previewUrls.map((url, index) => (
+                      <div key={index} className="relative">
+                        <img
+                          src={url}
+                          alt={`プレビュー ${index + 1}`}
+                          className="w-full h-24 object-cover rounded-md border-2 border-yellow-300"
+                        />
+                        <button
+                          onClick={() => removePreviewImage(index)}
+                          className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs hover:bg-red-600 transition-colors"
+                          title="画像を削除"
+                        >
+                          ×
+                        </button>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            )}
+              )}
             </section>
           )}
 
@@ -533,7 +535,7 @@ export default function JournalTimelineEntry({
         )}
       </div>
 
-      {/* 画像拡大モーダル */}
+      {/* 画像拡大モーダル
       {selectedImage && (
         <ImageModal
           image={selectedImage}
@@ -545,7 +547,7 @@ export default function JournalTimelineEntry({
           }))}
           onClose={() => setSelectedImage(null)}
         />
-      )}
+      )} */}
     </div>
   )
 }
